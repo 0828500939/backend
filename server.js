@@ -1,15 +1,17 @@
-const { createServer } = require('node:http');
+//hello world express with port 8081
+const express = require('express'); // conmmon js module
+// import express from 'express'; // ES6 module
 
-const hostname = '127.0.0.1';
-const port = 3000;
+const app = express(); // App express
+const port = 8081; // Port
 
-const server = createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.write('Hello World');
-  res.end("\nQuang Minh");
-});
+// define the first route
+app.get('/', function (req, res) {
+   res.send('Hello World');
+})
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+var server = app.listen(port, function () {
+  var host = server.address().address
+  var port = server.address().port
+  console.log("Example app listening at http://%s:%s", host, port)
+})
