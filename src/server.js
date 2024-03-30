@@ -9,7 +9,6 @@ const hostname = process.env.HOST_NAME; // Hostname
 // Get the client
 const mysql = require('mysql2')
 
-// test connection
 // Create the connection to database
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -28,8 +27,6 @@ function (err, results, fields)
           console.log('>>>check results: ', results);
           console.log('>>>check fields: ', fields);
 });
-
-
 
 // config template engine
 configViewEngine(app);
