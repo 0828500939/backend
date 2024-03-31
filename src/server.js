@@ -25,7 +25,6 @@ function (err, results, fields)
 {
           console.log('>>>check err:', err);
           console.log('>>>check results: ', results);
-          console.log('>>>check fields: ', fields);
 });
 
 // config template engine
