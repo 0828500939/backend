@@ -9,13 +9,13 @@ const hostname = process.env.HOST_NAME; // Hostname
 const connection = require('./config/database'); // Connection database
 
 // A simple SELECT query
-connection.query(
-  'SELECT * FROM Users u',
-function (err, results)
-{
-  console.log('>>>check err:', err);
-  console.log('>>>check results: ', results);
-});
+// connection.query(
+//   'SELECT * FROM Users u',
+// function (err, results)
+// {
+//   console.log('>>>check err:', err);
+//   console.log('>>>check results: ', results);
+// });
 
 // config template engine
 configViewEngine(app);
