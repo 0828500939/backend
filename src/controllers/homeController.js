@@ -13,9 +13,16 @@ const getSecondpage = (req, res) =>
     res.render('sample.ejs');
 }
 
+const postCreateUser = (req, res) =>
+{
+    console.log('>>>check req.body:', req.body);
+    // res.send("Create user successfully");
+    res.render('create-user.ejs');
+}
+
 module.exports = 
 {
     getHomepage,
-    getSecondpage
-
+    getSecondpage,
+    postCreateUser,
 } // Export module 

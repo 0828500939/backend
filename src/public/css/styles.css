@@ -43,7 +43,8 @@
 .input-group{
     padding: 10px;
 }
-button{
+input[type="submit"]
+{
     margin: 10px;
     cursor: pointer;
 }
