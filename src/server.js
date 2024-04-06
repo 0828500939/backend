@@ -18,6 +18,14 @@ configViewEngine(app);
 // define route
 app.use('/', webRoutes);
 
+// simple query
+// connection.query(
+//   `SELECT * FROM Users u `,
+//   function (err, results, fields) {
+//     console.log('>>>Results: ',results);
+//   }
+// );
+
 var server = app.listen(port, hostname, function () {
   var host = server.address().address
   var port = server.address().port
