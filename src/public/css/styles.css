@@ -67,7 +67,7 @@ input[type="submit"] {
     background-color: #f2f2f2;
 }
 
-#customers tr:hover {
+#customers td:hover {
     background-color: #bfffe7;
 }
 
@@ -78,9 +78,15 @@ input[type="submit"] {
     background-color: #04AA6D;
     color: white;
 }
-.list-users{
+
+.list-users {
     font-size: 21px;
 }
-.table-container{
+
+.table-container {
     padding: 15px 20px;
+}
+
+.edit, .delete{
+    text-align: center;
 }
