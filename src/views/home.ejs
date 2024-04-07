@@ -13,6 +13,7 @@
         <a href="/create">Create Users</a>
     </div>
     <div class="table-container">
+        <%= JSON.stringify(listUsers[0]) %>
         <div class="list-users">
             List Users
         </div>
@@ -30,11 +31,10 @@
                 <td>Berglunds snabbköp</td>
                 <td>Christina Berglund</td>
                 <td>Sweden</td>
-                <td class="edit" rowspan="3">
-                    <button>Edit</button>
-                </td>
-                <td class="delete" rowspan="3">
-                    <button>Delete</button>
+                <td>
+                    <button class="editButton">Edit</button>
+                <td>
+                    <button class="delButton">Delete</button>
                 </td>
             </tr>
             <tr>
@@ -42,12 +42,22 @@
                 <td>Centro comercial Moctezuma</td>
                 <td>Francisco Chang</td>
                 <td>Mexico</td>
+                <td>
+                    <button class="editButton">Edit</button>
+                <td>
+                    <button class="delButton">Delete</button>
+                </td>
             </tr>
             <tr>
                 <td>3</td>
                 <td>Ernst Handel</td>
                 <td>Roland Mendel</td>
                 <td>Austria</td>
+                <td>
+                    <button class="editButton">Edit</button>
+                <td>
+                    <button class="delButton">Delete</button>
+                </td>
             </tr>
         </table>
     </div>

@@ -1,10 +1,19 @@
 const connection = require('../config/database');
 
-const getHomepage = (req, res) => {
+const getHomepage = async (req, res) => {
     // process data
     // call model
     // A simple SELECT query
-    return res.render('home.ejs')
+    try {
+        let [results, fields] = await connection.query(
+            `SELECT * FROM Users`
+        );
+        console.log(results); // results contains rows returned by server
+        console.log(fields); // fields contains extra meta data about results, if available
+        return res.render('home.ejs', {listUsers: results});
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 const getSecondpage = (req, res) => {
