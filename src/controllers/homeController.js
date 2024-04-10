@@ -47,6 +47,9 @@ const postCreateUser = async (req, res) => {
         console.log(err);
     }
 }
+const getUpdatePage = (req, res) => {
+    res.render('edit.ejs');
+}
 
 module.exports =
 {
@@ -54,4 +57,5 @@ module.exports =
     getSecondpage,
     getCreatePage,
     postCreateUser,
+    getUpdatePage,
 } // Export module 
