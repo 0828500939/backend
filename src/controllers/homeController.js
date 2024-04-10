@@ -1,15 +1,14 @@
 const connection = require('../config/database');
+const { getAllUsers } = require('../services/CRUDService');
 
 const getHomepage = async (req, res) => {
     // process data
     // call model
     // A simple SELECT query
     try {
-        let [results, fields] = await connection.query(
-            `SELECT * FROM Users`
-        );
+        let results = await getAllUsers();
         console.log(results); // results contains rows returned by server
-        console.log(fields); // fields contains extra meta data about results, if available
+        // console.log(fields); // fields contains extra meta data about results, if available
         return res.render('home.ejs', {listUsers: results});
     } catch (err) {
         console.log(err);
