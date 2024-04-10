@@ -13,7 +13,7 @@
         <a href="/create">Create Users</a>
     </div>
     <div class="table-container">
-        <%= JSON.stringify(listUsers[0]) %>
+
         <div class="list-users">
             List Users
         </div>
@@ -26,39 +26,49 @@
                 <th>Country</th>
                 <th colspan="2">Action</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>Berglunds snabbköp</td>
-                <td>Christina Berglund</td>
-                <td>Sweden</td>
-                <td>
-                    <button class="editButton">Edit</button>
-                <td>
-                    <button class="delButton">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Centro comercial Moctezuma</td>
-                <td>Francisco Chang</td>
-                <td>Mexico</td>
-                <td>
-                    <button class="editButton">Edit</button>
-                <td>
-                    <button class="delButton">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Ernst Handel</td>
-                <td>Roland Mendel</td>
-                <td>Austria</td>
-                <td>
-                    <button class="editButton">Edit</button>
-                <td>
-                    <button class="delButton">Delete</button>
-                </td>
-            </tr>
+
+            <!-- <% for (let i=0; i < listUsers.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= listUsers[i].id %>
+                    </td>
+                    <td>
+                        <%= listUsers[i].email %>
+                    </td>
+                    <td>
+                        <%= listUsers[i].name %>
+                    </td>
+                    <td>
+                        <%= listUsers[i].city %>
+                    </td>
+                    <td>
+                        <button class="editButton">Edit</button>
+                    <td>
+                        <button class="delButton">Delete</button>
+                    </td>
+                </tr>
+            <% } %> -->
+            <% listUsers.forEach(function(user) { %>
+                <tr>
+                    <td>
+                        <%= user.id %>
+                    </td>
+                    <td>
+                        <%= user.email %>
+                    </td>
+                    <td>
+                        <%= user.name %>
+                    </td>
+                    <td>
+                        <%= user.city %>
+                    </td>
+                    <td>
+                        <button class="editButton">Edit</button>
+                    <td>
+                        <button class="delButton">Delete</button>
+                    </td>
+                </tr>
+             <% }); %>
         </table>
     </div>
 </body>
