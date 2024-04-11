@@ -1,5 +1,5 @@
 const connection = require('../config/database');
-const { getAllUsers } = require('../services/CRUDService');
+const { getAllUsers, importUsers } = require('../services/CRUDService');
 
 const getHomepage = async (req, res) => {
     try {
@@ -22,9 +22,6 @@ const postCreateUser = async (req, res) => {
     let email = req.body.email;
     let name = req.body.myname;
     let city = req.body.city;
-    console.log('>>>check req.body:', '\nemail:', email, '\nname:', name, '\ncity:', city);
-
-
     // connection.query(
     //     `INSERT INTO Users (email, name, city) 
     //     VALUES (?, ?, ?)`,
@@ -33,7 +30,6 @@ const postCreateUser = async (req, res) => {
     //       console.log(results);
     //     }
     //   );
-
     try {
         let [results, fields] = await connection.query(
             `INSERT INTO Users (email, name, city) 
@@ -41,10 +37,10 @@ const postCreateUser = async (req, res) => {
             [email, name, city]
         );
         console.log(results); // results contains rows returned by server
-        console.log(fields); // fields contains extra meta data about results, if available
         res.send("User created successfully");
     } catch (err) {
         console.log(err);
+        res.status(500).send("An error occurred while creating the user");
     }
 }
 const getUpdatePage = (req, res) => {

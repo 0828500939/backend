@@ -6,6 +6,11 @@ const getAllUsers = async () => {
     );
     return results;
 }
+const importUsers = async () =>  {
+    
+    return results;
+
+}
 module.exports = {
     getAllUsers,
 }

@@ -12,32 +12,28 @@
         <a href="/">Home</a>
         <a href="/create">Create User</a>
     </div>
-    <div class="form-add-new">
-        <form action="/create-user" method="POST">
-            <fieldset>
-                <legend>Update a user</legend>
-                <div class="input-group">
+    <div class="login-box">
+        <form id="myForm" action="/create-user" method="POST">
+                <div class="user-box">
+                    <input type="text" id="emailId" name="email" required="" />
                     <label>Email: </label>
-                    <input type="text" id="emailId" name="email" />
                 </div>
 
-                <div class="input-group">
+                <div class="user-box">
+                    <input type="text" id="nameId" name="myname" required="" />
                     <label>Name: </label>
-                    <input type="text" id="nameId" name="myname" />
                 </div>
 
-                <div class="input-group">
+                <div class="user-box">
+                    <input type="text" id="cityId" name="city" required="" />
                     <label>City: </label>
-                    <input type="text" id="cityId" name="city" />
                 </div>
-
-                <div>
-                    <input type="submit" value="Submit">
-                </div>
-            </fieldset>
+                    <a href="#" onclick="submitForm()" >
+                        EDIT
+                    <span></span>
         </form>
     </div>
-    <script src="../public/js/script.js"></script>
+
 </body>
 
 </html>

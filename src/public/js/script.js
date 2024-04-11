@@ -9,3 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+function submitForm() {
+    document.getElementById("myForm").submit();
+}
